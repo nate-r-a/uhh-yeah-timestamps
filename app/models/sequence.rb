@@ -1,0 +1,2 @@
+class Sequence < Timestamp
+end

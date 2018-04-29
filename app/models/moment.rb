@@ -1,0 +1,2 @@
+class Moment < Timestamp
+end
