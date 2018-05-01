@@ -1,2 +1,0 @@
-class Moment < Timestamp
-end
