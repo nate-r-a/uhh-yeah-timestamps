@@ -1,0 +1,10 @@
+:css
+  #uyd {
+    width: 100%;
+  }
+- @episodes.each do |ep|
+  %audio#uyd{controls: ""}
+    %source{src: "#{ep.url}"}
+      Can't play it!
+  - @timetstamps = ep.timestamps
+  = render partial: @timestamps

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_30_232453) do
+ActiveRecord::Schema.define(version: 2018_05_02_171632) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "title"
@@ -21,13 +21,22 @@ ActiveRecord::Schema.define(version: 2018_04_30_232453) do
     t.string "filename"
   end
 
+  create_table "segments", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "timestamps", force: :cascade do |t|
     t.integer "start"
     t.string "comment"
     t.integer "episode_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "segment_id"
+    t.string "uid"
     t.index ["episode_id"], name: "index_timestamps_on_episode_id"
+    t.index ["segment_id"], name: "index_timestamps_on_segment_id"
   end
 
 end

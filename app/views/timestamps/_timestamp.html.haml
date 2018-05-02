@@ -1,0 +1,8 @@
+%p{id: "#{timestamp.uid}"}
+  = timestamp.display_time
+:javascript
+  time = document.getElementById("#{timestamp.uid}")
+  time.addEventListener("click", function() {
+    uyd = document.getElementById("uyd")
+    uyd.currentTime = #{timestamp.start}
+  })
