@@ -1,10 +1,13 @@
-:css
-  #uyd {
-    width: 100%;
-  }
-- @episodes.each do |ep|
-  %audio#uyd{controls: ""}
-    %source{src: "#{ep.url}"}
-      Can't play it!
-  - @timetstamps = ep.timestamps
-  = render partial: @timestamps
+.general
+  .title Uhh Yeah Timestamps
+  .subtitle America through the eyes of two American-Americans,
+  .subtitle through timestamps on this website
+  .links 
+    %a{href: "https://uhhyeahdude.com"}uhhyeahdude.com 
+    | 
+    %a{href: "tel:+8888422357"} (888) 842-2357 
+    | 
+    %a{href: "https://www.patreon.com/UHHYEAHDUDE"}Support Uhh Yeah Dude on Patreon
+%hr
+= render partial: @episodes
+

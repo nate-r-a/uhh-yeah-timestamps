@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+.general {
+  font-family: Courier;
+  text-align: center;
+}
+
+.title {
+  font-size: 45px;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.subsubtitle {
+}
+
+.links a {
+  text-decoration: italics;
+  font-size: 16px;
+  color: #000000;
+}
+
+.links a:visited {
+  color: inherit;
+}
+
+.links a:hover {
+  color: #a7a7a7;
+}
