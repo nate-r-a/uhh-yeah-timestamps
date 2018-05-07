@@ -13,6 +13,23 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: Courier;
+  margin: 0 auto;
+  text-align: center;
+  width: 960px;
+}
+
+.content {
+  display: inline-block;
+  width: 80%;
+}
+
+h2 {
+  margin: 5px 0;
+  text-align: left;
+}
+
 .general {
   font-family: Courier;
   text-align: center;
@@ -31,9 +48,9 @@
 }
 
 .links a {
-  text-decoration: italics;
-  font-size: 16px;
   color: #000000;
+  font-size: 16px;
+  text-decoration: italics;
 }
 
 .links a:visited {

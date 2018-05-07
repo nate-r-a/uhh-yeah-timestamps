@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_02_171632) do
+ActiveRecord::Schema.define(version: 2018_05_07_185622) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_171632) do
     t.datetime "updated_at", null: false
     t.datetime "release_date"
     t.string "filename"
+    t.boolean "archived", default: false
   end
 
   create_table "segments", force: :cascade do |t|
@@ -34,7 +35,6 @@ ActiveRecord::Schema.define(version: 2018_05_02_171632) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "segment_id"
-    t.string "uid"
     t.index ["episode_id"], name: "index_timestamps_on_episode_id"
     t.index ["segment_id"], name: "index_timestamps_on_segment_id"
   end

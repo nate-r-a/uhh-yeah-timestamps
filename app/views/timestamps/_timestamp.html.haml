@@ -1,8 +1,12 @@
 %p{id: "#{timestamp.uid}"}
   = timestamp.display_time
+  - if timestamp.segment
+    \-
+    %strong= timestamp.segment.title
+  %i= " - " + timestamp.comment
 :javascript
   time = document.getElementById("#{timestamp.uid}")
   time.addEventListener("click", function() {
-    uyd = document.getElementById("uyd")
+    uyd = document.getElementById("#{timestamp.episode.uid}")
     uyd.currentTime = #{timestamp.start}
   })

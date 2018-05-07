@@ -3,11 +3,12 @@
   .subtitle America through the eyes of two American-Americans,
   .subtitle through timestamps on this website
   .links 
-    %a{href: "https://uhhyeahdude.com"}uhhyeahdude.com 
+    %a{href: "https://uhhyeahdude.com", target: "_blank"}uhhyeahdude.com 
     | 
     %a{href: "tel:+8888422357"} (888) 842-2357 
     | 
-    %a{href: "https://www.patreon.com/UHHYEAHDUDE"}Support Uhh Yeah Dude on Patreon
+    %a{href: "https://www.patreon.com/UHHYEAHDUDE", target: "_blank"}Support Uhh Yeah Dude on Patreon
 %hr
-= render partial: @episodes
+.content
+  = render partial: @episodes
 
