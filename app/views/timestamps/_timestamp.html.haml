@@ -1,9 +1,10 @@
-%p{id: "#{timestamp.uid}"}
+%p.timestamp{id: "#{timestamp.uid}"}
   = timestamp.display_time
   - if timestamp.segment
     \-
     %strong= timestamp.segment.title
-  %i= " - " + timestamp.comment
+  \-
+  %span.comment= timestamp.comment
 :javascript
   time = document.getElementById("#{timestamp.uid}")
   time.addEventListener("click", function() {

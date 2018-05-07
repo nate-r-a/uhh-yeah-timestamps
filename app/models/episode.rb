@@ -5,6 +5,10 @@ class Episode < ApplicationRecord
     "https://traffic.libsyn.com/uhhyeahdude/#{self.filename}.mp3"
   end
 
+  def title
+    "Episode " + self.number.to_s
+  end
+
   def uid
     "ep" + self.number.to_s
   end

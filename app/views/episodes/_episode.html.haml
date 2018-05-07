@@ -2,5 +2,5 @@
 %audio.uyd-audio{id: "#{episode.uid}", controls: ""}
   %source{src: "#{episode.url}"}
     Can't play it!
-- @timetstamps = episode.timestamps
-= render partial: @timestamps
+-# - @timetstamps = episode.timestamps
+= render partial: episode.timestamps
