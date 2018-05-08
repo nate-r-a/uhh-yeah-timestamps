@@ -1,11 +1,26 @@
-= form_with model: Timestamp.new do |f|
+= form_with model: Timestamp.new, id: "#{episode.uid}-timestamp-form" do |f|
   %span
     = f.label "Add a timestamp at "
     %span<
-      = (f.text_field :hour, maxlength: 1, size: 1) + ":"
-      = (f.text_field :minute, maxlength: 2, size: 2) + ":"
-      = f.text_field :second, maxlength: 2, size: 2
+      = (f.number_field :hours, min: 0, max: 1, step: 1, only_integer: true, id: "#{episode.uid}-hours") + ":"
+      = (f.number_field :minutes, min: 0, max: 59, step: 1, id: "#{episode.uid}-minutes") + ":"
+      = f.number_field :seconds, min: 0, max: 59, step: 1, id: "#{episode.uid}-seconds"
+      %span.current-time{id: "#{episode.uid}-current-time"} current time
 
-    = f.collection_select :segment_id, Segment.ordered, :id, :title, prompt: "Select a segment (or not)"
+    = f.collection_select :segment_id, Segment.ordered, :id, :title, prompt: "Select a recurring segment (or not)"
     = f.text_field :comment, placeholder: "Short description"
     = f.hidden_field :episode_id, value: episode.id
+  :javascript
+    document.getElementById("#{episode.uid}-current-time").addEventListener("click", function() {
+
+      epAudio = document.getElementById("#{episode.uid}");
+      startSeconds = epAudio.currentTime;
+      hours = Math.floor(startSeconds / 3600);
+      startSeconds %= 3600;
+      minutes = Math.floor(startSeconds / 60);
+      seconds = Math.floor(startSeconds % 60);
+      document.getElementById("#{episode.uid}-hours").value = hours
+      document.getElementById("#{episode.uid}-minutes").value = minutes
+      document.getElementById("#{episode.uid}-seconds").value = seconds
+      // Add 0 padding for filled-in numbers
+    })

@@ -4,6 +4,19 @@
   text-align: left;
 }
 
+.timestamp-form {
+  margin-bottom: 15px;
+}
+
 .comment {
   font-style: italic;
+}
+
+.current-time {
+  color: #0800ff;
+  cursor: pointer;
+  position: relative;
+  bottom: -15px;
+  left: -78px;
+  font-size: 10px;
 }
