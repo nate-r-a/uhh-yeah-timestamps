@@ -3,4 +3,5 @@
   %source{src: "#{episode.url}"}
     Can't play it!
 -# - @timetstamps = episode.timestamps
+= render partial: "timestamps/form", locals: {episode: episode}
 = render partial: episode.timestamps

@@ -1,0 +1,11 @@
+= form_with model: Timestamp.new do |f|
+  %span
+    = f.label "Add a timestamp at "
+    %span<
+      = (f.text_field :hour, maxlength: 1, size: 1) + ":"
+      = (f.text_field :minute, maxlength: 2, size: 2) + ":"
+      = f.text_field :second, maxlength: 2, size: 2
+
+    = f.collection_select :segment_id, Segment.ordered, :id, :title, prompt: "Select a segment (or not)"
+    = f.text_field :comment, placeholder: "Short description"
+    = f.hidden_field :episode_id, value: episode.id
