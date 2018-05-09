@@ -1,7 +1,7 @@
 = form_with model: Timestamp.new, id: "#{episode.uid}-timestamp-form" do |f|
   %span
     = f.label "Add a timestamp at "
-    %span<
+    %span.time-input<
       = (f.number_field :hours, min: 0, max: 1, step: 1, only_integer: true, id: "#{episode.uid}-hours") + ":"
       = (f.number_field :minutes, min: 0, max: 59, step: 1, id: "#{episode.uid}-minutes") + ":"
       = f.number_field :seconds, min: 0, max: 59, step: 1, id: "#{episode.uid}-seconds"
@@ -12,7 +12,6 @@
     = f.hidden_field :episode_id, value: episode.id
   :javascript
     document.getElementById("#{episode.uid}-current-time").addEventListener("click", function() {
-
       epAudio = document.getElementById("#{episode.uid}");
       startSeconds = epAudio.currentTime;
       hours = Math.floor(startSeconds / 3600);
@@ -20,7 +19,7 @@
       minutes = Math.floor(startSeconds / 60);
       seconds = Math.floor(startSeconds % 60);
       document.getElementById("#{episode.uid}-hours").value = hours
-      document.getElementById("#{episode.uid}-minutes").value = minutes
-      document.getElementById("#{episode.uid}-seconds").value = seconds
+      document.getElementById("#{episode.uid}-minutes").value = rjust(minutes.toString(), 2, "0")
+      document.getElementById("#{episode.uid}-seconds").value = rjust(seconds.toString(), 2, "0")
       // Add 0 padding for filled-in numbers
     })

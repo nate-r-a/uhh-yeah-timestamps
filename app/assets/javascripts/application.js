@@ -14,3 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function rjust( string, width, padding ) {
+  padding = padding || " ";
+  padding = padding.substr( 0, 1 );
+  if ( string.length < width )
+    return padding.repeat( width - string.length ) + string;
+  else
+    return string;
+}
