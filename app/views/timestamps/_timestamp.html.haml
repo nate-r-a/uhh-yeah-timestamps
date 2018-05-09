@@ -5,6 +5,10 @@
     %strong= timestamp.segment.title
   \-
   %span.comment= timestamp.comment
+  \-
+  %span
+    = fa_icon 'thumbs-o-up'
+    = timestamp.votes_for.count
 :javascript
   time = document.getElementById("#{timestamp.uid}")
   time.addEventListener("click", function() {
