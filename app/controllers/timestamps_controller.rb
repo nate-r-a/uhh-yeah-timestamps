@@ -61,6 +61,40 @@ class TimestampsController < ApplicationController
     end
   end
 
+  def like
+    @timestamp = Timestamp.find(params[:id])
+    @timestamp.liked_by current_user
+    respond_to do |format|
+      format.js { }
+    end
+    # redirect_back fallback_location: root_path
+  end
+
+  def unlike
+    @timestamp = Timestamp.find(params[:id])
+    @timestamp.unliked_by current_user
+    respond_to do |format|
+      format.js { }
+    end
+  end
+
+  def vote
+    if current_user
+      @timestamp = Timestamp.find(params[:id])
+      if current_user.liked? @timestamp
+        @timestamp.unliked_by current_user
+      else
+        @timestamp.liked_by current_user
+      end
+    else
+      # TODO: Add request to sign up or sign in
+    end
+
+    respond_to do |format|
+      format.js { }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_timestamp

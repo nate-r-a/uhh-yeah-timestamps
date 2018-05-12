@@ -6,9 +6,28 @@
   \-
   %span.comment= timestamp.comment
   \-
-  %span
-    = fa_icon 'thumbs-o-up'
-    = timestamp.votes_for.count
+  %span.vote
+    - if timestamp.liked_by current_user
+      = link_to vote_timestamp_path(timestamp), remote: true, method: :put do#, data: { toggle_icon: 'thumbs-o-up' } }
+        = fa_icon 'thumbs-o-up'
+    - else
+      = link_to vote_timestamp_path(timestamp), remote: true, method: :put do#, data: { toggle_icon: 'thumbs-up' } }
+        = fa_icon 'thumbs-up'
+
+    -# - if timestamp.liked_by current_user
+    -#   %a{href: vote_timestamp_path(timestamp), remote: true, method: :put, data: { toggle_icon: 'thumbs-o-up' } }
+    -#     = fa_icon 'thumbs-o-up'
+    -# - else
+    -#   %a{href: vote_timestamp_path(timestamp), remote: true, method: :put, data: { toggle_icon: 'thumbs-up' } }
+    -#     = fa_icon 'thumbs-up'
+
+    -# - if timestamp.liked_by current_user
+    -#   %a{href: unlike_timestamp_path(timestamp), remote: true, method: :put, data: { toggle_icon: 'thumbs-o-up' } }
+    -#     = fa_icon 'thumbs-up'
+    -# - else
+    -#   %a{href: like_timestamp_path(timestamp), remote: true, method: :put, data: { toggle_icon: 'thumbs-up' } }
+    -#     = fa_icon 'thumbs-o-up'
+    %span.vote-count{id: "#{timestamp.uid}-votes"}= timestamp.votes_for.count
 :javascript
   time = document.getElementById("#{timestamp.uid}")
   time.addEventListener("click", function() {

@@ -1,4 +1,10 @@
-%a{href: destroy_user_session_path, method: :delete} Sign out
+- if current_user
+  %a{href: destroy_user_session_path, method: :delete} Sign out
+  = current_user
+- else
+  %a{href: new_user_registration_path} Sign up
+  |
+  %a{href: new_user_session_path, method: :get} Sign in
 .general
   .title Uhh Yeah Timestamps
   .subtitle America through the eyes of two American-Americans,

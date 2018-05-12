@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  root "episodes#index"
   devise_for :users
   resources :segments
-  resources :timestamps
+  resources :timestamps do
+    member do
+      # put "like", to: "timestamps#like"
+      # put "unlike", to: "timestamps#unlike"
+      put "vote", to: "timestamps#vote"
+    end
+  end
   resources :episodes
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
