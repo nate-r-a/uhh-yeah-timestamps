@@ -1,2 +1,10 @@
-id = "<%= @timestamp.uid %>" + "-votes"
-document.getElementById(id).innerHTML = <%= @timestamp.votes_for.count %>
+vote = document.getElementById("<%= @timestamp.uid %>-vote")
+if (<%= @being_liked %>) {
+  vote.children[0].classList.remove("fa-thumbs-o-up")
+  vote.children[0].classList.add("fa-thumbs-up")
+} else {
+  vote.children[0].classList.remove("fa-thumbs-up")
+  vote.children[0].classList.add("fa-thumbs-o-up")
+}
+
+vote.children[1].innerHTML = <%= @timestamp.votes_for.count %>

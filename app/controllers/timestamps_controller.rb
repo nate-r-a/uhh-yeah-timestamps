@@ -79,12 +79,15 @@ class TimestampsController < ApplicationController
   end
 
   def vote
+    @being_liked = nil
     if current_user
       @timestamp = Timestamp.find(params[:id])
       if current_user.liked? @timestamp
         @timestamp.unliked_by current_user
+        @being_liked = false
       else
         @timestamp.liked_by current_user
+        @being_liked = true
       end
     else
       # TODO: Add request to sign up or sign in
