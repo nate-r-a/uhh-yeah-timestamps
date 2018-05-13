@@ -1,4 +1,2 @@
-console.log("vote called")
 id = "<%= @timestamp.uid %>" + "-votes"
 document.getElementById(id).innerHTML = <%= @timestamp.votes_for.count %>
-console.log("<%= @timestamp.votes_for.count %>")
