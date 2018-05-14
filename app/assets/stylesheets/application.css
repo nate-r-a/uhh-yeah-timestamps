@@ -17,16 +17,16 @@
 
 a {
   color: #000000;
-  font-size: 16px;
-  font-style: italics;
+  /*font-size: 16px;*/
+  /*font-style: italic;*/
 }
 
 body {
   font-family: Courier;
   /*font-family: 'Roboto Slab', serif;*/
-  margin: 50px auto;
+  margin: 10px auto;
   text-align: center;
-  width: 960px;
+  max-width: 1000px;
 }
 
 .content {
@@ -58,6 +58,11 @@ h2 {
 }
 
 .subsubtitle {
+
+}
+
+.links a {
+  font-size: 14px;
 }
 
 .links a:visited {
@@ -66,4 +71,9 @@ h2 {
 
 .links a:hover {
   color: #a7a7a7;
+}
+
+.phone {
+  position: relative;
+  top: 2px;
 }

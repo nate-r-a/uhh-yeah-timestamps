@@ -12,6 +12,7 @@
     = f.hidden_field :episode_id, value: episode.id
     = f.hidden_field :start
     = f.submit "✔"
+    
   :javascript
     document.getElementById("#{episode.uid}-current-time").addEventListener("click", function() {
       epAudio = document.getElementById("#{episode.uid}");

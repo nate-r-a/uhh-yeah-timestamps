@@ -2,6 +2,8 @@
   font-size: 14px;
   margin: 5px 5%;
   text-align: left;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
 .timestamp a {
@@ -11,10 +13,11 @@
 
 .timestamp-form {
   margin-bottom: 15px;
+  line-height: 2;
 }
 
 .time-input {
-  margin-right: -25px;
+  margin-right: -75px;
 }
 
 .comment {
@@ -29,4 +32,10 @@
   left: -97px;
   font-size: 10px;
   width: 0px;
+}
+
+.vote{
+  border: 1px solid blue;
+  padding: 2px 4px;
+  border-radius: 7px;
 }
