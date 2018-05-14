@@ -1,4 +1,6 @@
 class Timestamp < ApplicationRecord
+  attr_accessor :hours, :minutes, :seconds
+
   belongs_to :episode
   belongs_to :segment, optional: true
 

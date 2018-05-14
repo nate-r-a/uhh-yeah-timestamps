@@ -7,7 +7,7 @@
   %span.comment= timestamp.comment
   \-
   %span.vote
-    - if timestamp.liked_by current_user
+    - if current_user.liked? timestamp
       = link_to vote_timestamp_path(timestamp), id: "#{timestamp.uid}-vote", remote: true, method: :put do
         %i.fa.fa-thumbs-up
         %span.vote-count{id: "#{timestamp.uid}-count"}= timestamp.votes_for.count

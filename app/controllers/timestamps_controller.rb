@@ -7,28 +7,18 @@ class TimestampsController < ApplicationController
     @timestamps = Timestamp.all
   end
 
-  # GET /timestamps/1
-  # GET /timestamps/1.json
-  def show
-  end
-
-  # GET /timestamps/new
-  def new
-    @timestamp = Timestamp.new
-  end
-
-  # GET /timestamps/1/edit
-  def edit
-  end
-
   # POST /timestamps
   # POST /timestamps.json
   def create
+    puts timestamp_params[:hours]
+    puts timestamp_params[:minutes]
+    puts timestamp_params[:seconds]
     @timestamp = Timestamp.new(timestamp_params)
+    @timestamp.start = (timestamp_params[:hours].to_i * 3600) + (timestamp_params[:minutes].to_i * 60) + timestamp_params[:seconds].to_i
 
     respond_to do |format|
       if @timestamp.save
-        format.html { redirect_to @timestamp, notice: 'Timestamp was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @timestamp }
       else
         format.html { render :new }
@@ -106,6 +96,6 @@ class TimestampsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timestamp_params
-      params.require(:timestamp).permit(:start, :comment, :episode_id)
+      params.require(:timestamp).permit(:start, :comment, :episode_id, :segment_id, :hours, :minutes, :seconds)
     end
 end

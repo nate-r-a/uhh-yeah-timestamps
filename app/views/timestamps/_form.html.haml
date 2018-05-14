@@ -1,15 +1,17 @@
-= form_with model: Timestamp.new, id: "#{episode.uid}-timestamp-form" do |f|
+= form_with model: Timestamp.new, class: "timestamp-form", id: "#{episode.uid}-timestamp-form" do |f|
   %span
     = f.label "Add a timestamp at "
     %span.time-input<
       = (f.number_field :hours, min: 0, max: 1, step: 1, only_integer: true, id: "#{episode.uid}-hours") + ":"
-      = (f.number_field :minutes, min: 0, max: 59, step: 1, id: "#{episode.uid}-minutes") + ":"
-      = f.number_field :seconds, min: 0, max: 59, step: 1, id: "#{episode.uid}-seconds"
+      = (f.number_field :minutes, min: 0, max: 59, step: 1, id: "#{episode.uid}-minutes", required: true) + ":"
+      = f.number_field :seconds, min: 0, max: 59, step: 1, id: "#{episode.uid}-seconds", required: true
       %span.current-time{id: "#{episode.uid}-current-time"} current time
 
     = f.collection_select :segment_id, Segment.ordered, :id, :title, prompt: "Select a recurring segment (or not)"
-    = f.text_field :comment, placeholder: "Short description"
+    = f.text_field :comment, placeholder: "Short description", required: true
     = f.hidden_field :episode_id, value: episode.id
+    = f.hidden_field :start
+    = f.submit "✔"
   :javascript
     document.getElementById("#{episode.uid}-current-time").addEventListener("click", function() {
       epAudio = document.getElementById("#{episode.uid}");

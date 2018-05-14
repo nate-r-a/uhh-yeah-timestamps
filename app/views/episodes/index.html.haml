@@ -1,6 +1,7 @@
 - if current_user
   %a{href: destroy_user_session_path, method: :delete} Sign out
   = current_user
+  = current_user.id
 - else
   %a{href: new_user_registration_path} Sign up
   |

@@ -14,7 +14,7 @@
 }
 
 .time-input {
-  
+  margin-right: -25px;
 }
 
 .comment {
@@ -22,10 +22,11 @@
 }
 
 .current-time {
-  color: #0800ff;
+  color: blue;
   cursor: pointer;
   position: relative;
   bottom: -15px;
-  left: -78px;
+  left: -97px;
   font-size: 10px;
+  width: 0px;
 }
