@@ -1,5 +1,5 @@
 class Episode < ApplicationRecord
-  has_many :timestamps
+  has_many :timestamps, dependent: :destroy
 
   def url
     "https://traffic.libsyn.com/uhhyeahdude/#{self.filename}.mp3"
