@@ -55,7 +55,8 @@ h2 {
 }
 
 .general-info {
-  font-family: Courier;
+  /* Uncommenting the line below breaks all the CSS. What? */
+  /*font-family: Courier;*/
   text-align: center;
 }
 
