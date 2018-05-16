@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_15_002024) do
+ActiveRecord::Schema.define(version: 2018_05_16_193934) do
 
   create_table "episodes", force: :cascade do |t|
     t.integer "number"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_05_15_002024) do
     t.datetime "release_date"
     t.string "filename"
     t.boolean "archived", default: false
+    t.integer "duration"
   end
 
   create_table "segments", force: :cascade do |t|
