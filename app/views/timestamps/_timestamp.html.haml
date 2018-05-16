@@ -6,7 +6,6 @@
       %strong= timestamp.segment.title
     \-
     %span.comment= timestamp.comment
-    \-
   %span.vote
     - if current_user.liked? timestamp
       = link_to vote_timestamp_path(timestamp), id: "#{timestamp.uid}-vote", remote: true, method: :put do
