@@ -29,21 +29,32 @@ body {
   max-width: 1000px;
 }
 
+h2 {
+  margin: 0;
+}
+
 .content {
   display: inline-block;
   width: 80%;
 }
 
-hr {
-  margin-bottom: 0;
+.top-content{
+  display: flex;
+  margin-bottom: 15px;
 }
 
-h2 {
-  margin: 20px 0 5px 0;
-  text-align: left;
+.half {
+  width: 50%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 5px;
 }
 
-.general {
+.half:first-child {
+  margin-right: 10px;
+}
+
+.general-info {
   font-family: Courier;
   text-align: center;
 }

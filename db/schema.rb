@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_09_042754) do
+ActiveRecord::Schema.define(version: 2018_05_15_002024) do
 
   create_table "episodes", force: :cascade do |t|
     t.integer "number"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2018_05_09_042754) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "segment_id"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["episode_id"], name: "index_timestamps_on_episode_id"
     t.index ["segment_id"], name: "index_timestamps_on_segment_id"
   end
