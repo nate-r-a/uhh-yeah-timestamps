@@ -1,5 +1,5 @@
-Episode.create(number: 642, filename: "ep642podcastappropriateattire")
-Episode.create(number: 645, filename: "ep645pucktalk")
+Episode.create(number: 642)
+Episode.create(number: 645)
 Segment.create(title: "Ask Amy")
 Segment.create(title: "USA Today Snapshots")
 Timestamp.create(episode: Episode.first, start: 500, segment: Segment.first, comment: "Seth just wants to find vegan butterscotch yogurt")
