@@ -23,6 +23,8 @@
         %span.vote-count{id: "#{timestamp.uid}-count"}= timestamp.votes_for.count
   - if user_signed_in? && timestamp.user == current_user
     %span.delete
+      = link_to timestamp_path, remote: true, method: :delete, confirm: "Are you sure you want to delete this?" do
+        %i.fa.fa-times
 
 :javascript
   time = document.getElementById("#{timestamp.uid}")

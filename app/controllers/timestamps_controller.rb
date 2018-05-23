@@ -44,26 +44,11 @@ class TimestampsController < ApplicationController
   # DELETE /timestamps/1
   # DELETE /timestamps/1.json
   def destroy
+    # TODO: Make sure user is authorized to delete it -- perhaps make some sort
+    # of `user_check` method or something
     @timestamp.destroy
     respond_to do |format|
-      format.html { redirect_to timestamps_url, notice: 'Timestamp was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  def like
-    @timestamp = Timestamp.find(params[:id])
-    @timestamp.liked_by current_user
-    respond_to do |format|
-      format.js { }
-    end
-    # redirect_back fallback_location: root_path
-  end
-
-  def unlike
-    @timestamp = Timestamp.find(params[:id])
-    @timestamp.unliked_by current_user
-    respond_to do |format|
+      # format.html { redirect_to timestamps_url, notice: 'Timestamp was successfully destroyed.' }
       format.js { }
     end
   end
