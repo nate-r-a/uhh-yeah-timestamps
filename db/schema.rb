@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_19_215247) do
+ActiveRecord::Schema.define(version: 2018_05_23_033936) do
 
   create_table "episodes", force: :cascade do |t|
     t.integer "number"
@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 2018_05_19_215247) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+    t.integer "user_id"
     t.index ["episode_id"], name: "index_timestamps_on_episode_id"
     t.index ["segment_id"], name: "index_timestamps_on_segment_id"
+    t.index ["user_id"], name: "index_timestamps_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
