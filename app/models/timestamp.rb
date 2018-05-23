@@ -3,6 +3,7 @@ class Timestamp < ApplicationRecord
 
   belongs_to :episode
   belongs_to :segment, optional: true
+  belongs_to :user
 
   acts_as_votable
 
