@@ -13,4 +13,8 @@ class Timestamp < ApplicationRecord
   def uid
     "ts" + self.id.to_s
   end
+
+  def deletable?
+    
+  end
 end
