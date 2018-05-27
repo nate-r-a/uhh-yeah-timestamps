@@ -30,6 +30,10 @@ gem 'devise'
 gem 'acts_as_votable', '~> 0.11.1'
 
 gem "font-awesome-rails"
+
+gem 'bootstrap', '~> 4.1.1'
+
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
