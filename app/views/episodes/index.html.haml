@@ -1,41 +1,30 @@
-- if current_user
-  %a{href: destroy_user_session_path, method: :delete} Sign out
-  = current_user
-  = current_user.id
-- else
-  %a{href: new_user_registration_path} Sign up
-  |
-  %a{href: new_user_session_path, method: :get} Sign in
-.general-info
-  .title Uhh Yeah Timestamps
-  .subtitle America through the eyes of two American-Americans,
-  .subtitle through timestamps on this website
-  .links
-    %a{href: "https://uhhyeahdude.com", target: "_blank"}uhhyeahdude.com
-    |
-    %a{href: "tel:+8888422357"}<
-      %i.fa.fa-phone.phone>
-      (888) 842-2357
-    |
-    %a{href: "https://www.patreon.com/UHHYEAHDUDE", target: "_blank"}Support Uhh Yeah Dude on Patreon
-%hr
-.content
-  .top-content
-    .half
-      %h2 Top 5
-      - @top5.each do |t|
-        .top5-item
-          = t.episode.short_title
-          \-
-          = t.comment
-    .half
-      %h2 A few random ones
-      - @randoms.each do |t|
-        -# Move this to a partial
-        .top5-item
-          = t.episode.short_title
-          \-
-          = t.comment
+-# %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+-#   %a.navbar-brand{href: "#"} Uhh Yeah Timestamps
+-#   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+-#     %span.navbar-toggler-icon
+-#   #navbarSupportedContent.collapse.navbar-collapse
+-#     %ul.navbar-nav.mr-auto
+-#       %li.nav-item.active
+-#         %a.nav-link{href: "#"}
+-#           %span.sr-only (current)
+-#       %li.nav-item
+-#         %a.nav-link{href: "https://www.uhhyeahdude.com"} UYD
+-#       %li.nav-item
+-#         %a.nav-link{href: "https://www.patreon.com/UHHYEAHDUDE"} Support UYD on Patreon
+-#       %li.nav-item.dropdown
+-#         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+-#           Segments
+-#         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+-#           - Segment.all.pluck(:id, :title).each do |id, title|
+-#             = link_to title, segment_path(id), class: 'dropdown-item'
+-#     %form.form-inline.my-2.my-lg-0
+-#       %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+-#       %button.btn.my-2.my-sm-0{:type => "submit"} Search
 
-
-  = render partial: @episodes
+.jumbotron.pt-1.no-background
+  %h1.display-4 Uhh Yeah Timestamps
+  %p.lead America through the eyes of two American-Americans, through timestamps on this website
+  %hr.my-4/
+  %p It uses utility classes for typography and spacing to space content out within the larger container.
+  %p.lead
+    %a.btn.btn-primary.btn-lg{:href => "#", :role => "button"} Learn more
