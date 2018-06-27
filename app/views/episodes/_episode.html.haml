@@ -1,7 +1,1 @@
-%h2.ep-title= episode.title
-%audio.uyd-audio{id: "#{episode.uid}", controls: ""}
-  %source{src: "#{episode.url}"}
-    Can't play it!
--# - @timetstamps = episode.timestamps
-= render partial: "timestamps/form", locals: {episode: episode}
-= render partial: episode.timestamps, locals: {episode: episode}
+%audio{src: "#{episode.url}", title: "#{episode.number}", data: { artist: "#{episode.datestring}" }}
