@@ -1,0 +1,41 @@
+- if current_user
+  %a{href: destroy_user_session_path, method: :delete} Sign out
+  = current_user
+  = current_user.id
+- else
+  %a{href: new_user_registration_path} Sign up
+  |
+  %a{href: new_user_session_path, method: :get} Sign in
+.general-info
+  .title Uhh Yeah Timestamps
+  .subtitle America through the eyes of two American-Americans,
+  .subtitle through timestamps on this website
+  .links
+    %a{href: "https://uhhyeahdude.com", target: "_blank"}uhhyeahdude.com
+    |
+    %a{href: "tel:+8888422357"}<
+      %i.fa.fa-phone.phone>
+      (888) 842-2357
+    |
+    %a{href: "https://www.patreon.com/UHHYEAHDUDE", target: "_blank"}Support Uhh Yeah Dude on Patreon
+%hr
+.content
+  .top-content
+    .half
+      %h2 Top 5
+      - @top5.each do |t|
+        .top5-item
+          = t.episode.short_title
+          \-
+          = t.comment
+    .half
+      %h2 A few random ones
+      - @randoms.each do |t|
+        -# Move this to a partial
+        .top5-item
+          = t.episode.short_title
+          \-
+          = t.comment
+
+
+  = render partial: @episodes

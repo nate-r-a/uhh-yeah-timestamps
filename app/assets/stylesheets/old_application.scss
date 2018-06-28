@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+a {
+  color: #000000;
+}
+
+body {
+  font-family: Courier;
+  /*font-family: 'Roboto Slab', serif;*/
+  margin: 10px auto;
+  text-align: center;
+  max-width: 1000px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.no-background {
+  background: none;
+}
+
+.content {
+  display: inline-block;
+  width: 80%;
+}
+
+.top-content{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.half {
+  width: 50%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.half:first-child {
+  margin-right: 10px;
+}
+
+.general-info {
+  /* Uncommenting the line below breaks all the CSS. What? */
+  /*font-family: Courier;*/
+  text-align: center;
+}
+
+.title {
+  font-size: 45px;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.subsubtitle {
+
+}
+
+.links a {
+  font-size: 14px;
+}
+
+.links a:visited {
+  color: inherit;
+}
+
+.links a:hover {
+  color: #a7a7a7;
+}
+
+.phone {
+  position: relative;
+  top: 2px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 2em;
+}
+
+li {
+  text-align: left;
+}

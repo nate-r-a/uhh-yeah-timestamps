@@ -12,7 +12,7 @@
     = f.hidden_field :episode_id, value: episode.id
     = f.hidden_field :start
     = f.submit "✔"
-    
+
   :javascript
     document.getElementById("#{episode.uid}-current-time").addEventListener("click", function() {
       epAudio = document.getElementById("#{episode.uid}");
@@ -24,5 +24,4 @@
       document.getElementById("#{episode.uid}-hours").value = hours
       document.getElementById("#{episode.uid}-minutes").value = rjust(minutes.toString(), 2, "0")
       document.getElementById("#{episode.uid}-seconds").value = rjust(seconds.toString(), 2, "0")
-      // Add 0 padding for filled-in numbers
     })
