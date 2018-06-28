@@ -89,3 +89,12 @@ h2 {
   position: relative;
   top: 2px;
 }
+
+ul {
+  margin: 0;
+  padding-left: 2em;
+}
+
+li {
+  text-align: left;
+}

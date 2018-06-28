@@ -1,1 +1,4 @@
 %audio{src: "#{episode.url}", title: "#{episode.number}", data: { artist: "#{episode.datestring}" }}
+
+%ul
+  = render partial: episode.timestamps, locals: {episode: episode}
