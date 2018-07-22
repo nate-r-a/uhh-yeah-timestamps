@@ -1,24 +1,5 @@
-# README
+# Uhh Yeah Timestamps
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Uhh Yeah Timestamps is a repository of episodes linking to clips of one of my favorite podcasts, [Uhh Yeah Dude](https://uhhyeahdude.com/).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Users will be able to add, edit, and delete timestamps to their favorite moments of (almost) every episode of the show, and others can vote them up. The media CSS currently utilizes [Picobel](https://github.com/tomhazledine/picobel).
